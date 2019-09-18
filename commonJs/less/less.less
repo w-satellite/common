@@ -1,0 +1,75 @@
+@charset "utf-8";
+*{margin:0px;padding:0px;}
+table {border-collapse: collapse; border-spacing: 0; font-size: inherit;}
+li {list-style: none;}
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-size-adjust: 100%;}
+body{color: #333;font-family: "微软雅黑"; font-size: 14px;}
+img {vertical-align: middle; border: 0; -ms-interpolation-mode: bicubic;}
+input{border:none;outline: none;font-family: "微软雅黑";}
+/**清除浮动**/
+.clear:after{display:block;clear:both;content: ' ';}
+.clear{zoom:1;}
+
+//A *****************************************************************
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+#header {
+  color: @light-blue;
+}
+//B *****************************************************************
+#header {
+  color: black;
+  .navigation {
+    font-size: 12px;
+  }
+  .logo {
+    width: 300px;
+  }
+}
+//C *****************************************************************
+.clearfix {
+  display: block;
+  zoom: 1;
+
+  &:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+//D *****************************************************************
+@images: "../img";
+body {
+  color: #444;
+  background: url("@{images}/white-sand.png");
+}
+//@themes: "../../src/themes";
+//@import "@{themes}/tidal-wave.less";
+
+//E *****************************************************************
+@property: color;
+.widget {
+    @{property}: #0ee;
+  background-@{property}: #999;
+}
+//F *****************************************************************
+.width(){
+  width: 200px;
+  height: 200px;
+}
+@base: #f938ab;
+.less{
+  .width();
+  background: @base;
+}//G *****************************************************************
+.lazy-eval {
+  width: @var;
+}
+@var: @a;
+@a: 9%;
+//H *****************************************************************
+//L *****************************************************************
+//F *****************************************************************

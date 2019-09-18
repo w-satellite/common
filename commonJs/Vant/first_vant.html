@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+	<title>Vant</title>
+	<link rel="stylesheet" href="vant.min.css">
+</head>
+<body>
+	<div id="app">
+		<!-- <van-button type="default">默认按钮</van-button>
+		<van-button type="primary">主要按钮</van-button>
+		<van-button type="info">信息按钮</van-button>
+		<van-button type="warning">警告按钮</van-button>
+		<van-button type="danger">危险按钮</van-button> -->
+		<!-- 图片 -->
+		<div>
+			<van-image
+			  width="100"
+			  height="100"
+			  src="https://img.yzcdn.cn/vant/cat.jpeg"
+			/>
+		</div>
+		<!-- 复选框 -->
+		<div>
+			<van-checkbox shape="square" v-model="checked">
+				复选框boolean类型model
+			</van-checkbox>
+		</div>
+		<!-- 时间控件 -->
+		<div class="time">
+			<van-datetime-picker
+			  v-model="currentDate"
+			  type="datetime"
+			  :min-date="minDate"
+			  :max-date="maxDate"
+			/>
+		</div>
+	</div>
+
+	<script src="vue.min.js"></script>
+	<script src="vant.min.js"></script>
+
+	<script>
+		new Vue({
+      el: '#app' ,
+      data() {
+		    return {
+		      checked: true ,
+		      minHour: 10,
+		      maxHour: 20,
+		      minDate: new Date(),
+		      maxDate: new Date(2019, 10, 1),
+		      currentDate: new Date()
+		    };
+		  }
+    });
+	</script>
+	<style>
+		.time{
+			width: 100%;
+			position: fixed;
+			bottom: 0px;
+			left: 0px;
+			z-index: 1;
+		}
+	</style>
+	</body>
+</html>
